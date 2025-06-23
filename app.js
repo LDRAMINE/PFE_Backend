@@ -9,6 +9,8 @@ const http = require("http")//1 importation web "http"
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+require("dotenv").config()//configuration .env
+
 var app = express();//BDIT KHEDMA
 
 
@@ -39,4 +41,4 @@ app.use(function(err, req, res, next) {
 });
 
 const server = http.createServer(app)
-server.listen(5000,()=>{console.log("app is running on port 5000")})
+server.listen(process.env.Port,()=>{console.log("app is running on port 5000")})
